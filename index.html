@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>신규 사업 전문가 평가</title><style>
+:root{font-family: "Malgun Gothic",Arial,sans-serif;color:#172f44;background:#edf2f7}*{box-sizing:border-box}body{margin:0;padding:22px}main{max-width:1230px;margin:auto}header{background:#183b59;color:white;padding:26px 30px;border-radius:15px}header h1{font-size:24px;margin:8px 0}header p{margin:0;color:#d9e8f5}.panel{background:#fff;border:1px solid #dce5ed;border-radius:15px;padding:24px;margin-top:17px;box-shadow:0 2px 12px #2135470c}.panel h2{font-size:19px;margin:0 0 8px}.muted{font-size:13px;color:#63778a;line-height:1.65}.top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}.btn{font:inherit;font-size:14px;padding:11px 15px;border-radius:9px;border:1px solid #183b59;color:white;background:#183b59;cursor:pointer}.btn.secondary{color:#183b59;background:white;border-color:#b5c9d8}.btn:disabled{background:#b7c4d0;border-color:#b7c4d0;cursor:not-allowed}.fields{display:flex;flex-wrap:wrap;gap:12px}.field{display:flex;flex-direction:column;gap:7px;flex:1;min-width:200px;font-size:13px;font-weight:700}.field input,.field textarea{width:100%;font:inherit;border:1px solid #c6d3df;border-radius:8px;padding:11px;background:white;color:#20394e}.matrixwrap{overflow-x:auto}.matrix{width:100%;min-width:950px;border-spacing:7px;table-layout:fixed}.matrix th{width:16%;padding:10px 6px;background:#e8eff6;color:#184266;border-radius:7px;font-size:13px}.matrix td{width:16.8%}.item{position:relative;width:100%;height:139px;border:1px solid #d1dee9;border-radius:10px;background:#fafcfe;padding:23px 9px 10px;cursor:pointer;text-align:center;vertical-align:middle}.item:hover{border-color:#457cab;background:#f0f8ff}.item-title{display:block;font-weight:800;font-size:14px;line-height:1.45}.details{display:block;color:#617689;font-size:11px;line-height:1.5;margin-top:8px;word-break:keep-all}.item[data-rank="1"]{background:#deebfb;border:2px solid #2661a4}.item[data-rank="2"]{background:#efeafa;border:2px solid #836bb6}.item[data-rank="3"]{background:#e0f3e9;border:2px solid #27865a}.item[data-rank="4"]{background:#fff0d8;border:2px solid #b77420}.item[data-rank="5"]{background:#fde8ed;border:2px solid #a74969}.tag{position:absolute;top:5px;right:5px;background:#183b59;color:#fff;border-radius:6px;font-size:11px;padding:3px 7px}.rank-buttons{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0}.rank{border:1px solid #b9cad8;color:#183b59;background:white;border-radius:24px;padding:10px 18px;cursor:pointer;font-weight:700}.rank.active{background:#183b59;color:white}.chosen{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.chosen article{background:#f5f8fb;border:1px solid #d4e0ea;border-radius:9px;padding:14px;font-size:13px;min-height:74px}.chosen strong{display:block;margin-bottom:7px;color:#36546d}.hidden{display:none!important}.steps{display:flex;gap:8px;flex-wrap:wrap}.step{border:1px solid #d0dfeb;border-radius:16px;padding:7px 12px;font-size:12px;background:#f3f7fa;color:#38566d}.step.on{background:#183b59;color:white}.subject{background:#e9f2fb;padding:13px 16px;border-radius:9px;margin:12px 0 19px;font-weight:700}.sector{background:#183b59;color:#fff;border-radius:8px;padding:13px 16px;margin:20px 0 12px;font-weight:800}.q{border:1px solid #dce5ee;border-radius:11px;padding:17px;margin:11px 0}.q h3{font-size:15px;margin:0 0 7px}.q p{font-size:13px;color:#52697d;margin:5px 0 12px}.opts{display:grid;gap:8px}.opt{display:flex;gap:11px;align-items:flex-start;border:1px solid #e0e7ee;border-radius:8px;padding:11px;font-size:13px;cursor:pointer;line-height:1.6}.opt:has(input:checked){background:#eaf2fc;border-color:#5483af}.opt input{margin-top:4px;accent-color:#225b95}.q.missing{border:2px solid #b54848}.actions{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin:18px 0}.results{width:100%;border-collapse:collapse}.results th,.results td{padding:12px;border-bottom:1px solid #dce5ee;text-align:left;font-size:13px}.results th{background:#edf3f8}.status{font-size:13px;line-height:1.6;white-space:pre-wrap}.warn{color:#a13c3c}.ok{color:#17643f}.admin{border:2px solid #c4d5e3}.edit-table{width:100%;min-width:850px;border-collapse:collapse}.edit-table th,.edit-table td{border-bottom:1px solid #e1e9ef;padding:8px;text-align:left;font-size:12px}.edit-table input{font:inherit;font-size:12px;width:100%;padding:8px;border:1px solid #c7d5e2;border-radius:6px}.admin-controls{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.note{background:#f2f6fb;border-radius:9px;padding:13px;font-size:13px;line-height:1.7}.footer-note{margin-top:15px;color:#546b80;font-size:12px}.progress{height:7px;background:#e4ebf2;border-radius:5px;overflow:hidden;margin:10px 0}.progress>div{height:100%;background:#2d689f;transition:.2s}.divider{height:1px;background:#e4ebf2;margin:19px 0}button:focus-visible,input:focus-visible{outline:3px solid #87aadd;outline-offset:2px}@media(max-width:650px){body{padding:10px}.panel{padding:16px}header{padding:20px}.chosen{grid-template-columns:1fr}.item{height:120px}}
+ .comment-row{border:1px solid #dce5ee;border-radius:11px;padding:14px;margin:11px 0;background:#fafcfe}.comment-row .comment-separator{color:#8197a8;margin:0 4px}.comment-row label{display:block;font-size:14px;font-weight:700;margin-bottom:7px}.comment-row textarea{width:100%;font:inherit;padding:12px;min-height:76px;resize:vertical;border:1px solid #c6d3df;border-radius:8px}.optional{color:#63778a;font-weight:400;font-size:12px}
+/* 33-step wizard and playful progression */
+.gameprogress{position:sticky;top:0;z-index:15;background:#ffffffee;backdrop-filter:blur(14px);border:1px solid #d7e4ef;border-radius:15px;padding:13px 17px;box-shadow:0 7px 25px #13344a16;margin-top:15px}.gptext{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:#173d5e}.gptext span{color:#627b8f}.gprail{height:11px;border-radius:30px;background:#e7eff7;overflow:hidden;margin:10px 0 8px}.gprail>div{height:100%;width:0%;background:linear-gradient(90deg,#5a8cd1,#30ad9d);border-radius:30px;transition:width .35s,background .35s}.gpbadge{font-weight:750;font-size:12px;color:#146384}.gameprogress.level2 .gprail>div{background:linear-gradient(90deg,#327ac5,#18b3a8)}.gameprogress.level3 .gprail>div{background:linear-gradient(90deg,#7358c5,#3b91da)}.gameprogress.level4 .gprail>div{background:linear-gradient(90deg,#b16bcd,#e88e4f)}.gameprogress.level5 .gprail>div{background:linear-gradient(90deg,#e9a63f,#e76c65)}
+.stageNav{display:flex;gap:7px;overflow-x:auto;padding:11px 1px 8px;scrollbar-width:thin}.stageNav button{white-space:nowrap;border:1px solid #d2e0ed;background:#f7fafc;color:#44647a;border-radius:99px;padding:8px 13px;cursor:pointer;font-weight:700;font-size:12px}.stageNav button.active{background:#1b537d;color:white;border-color:#1b537d}.stageNav button.done{border-color:#23a38c;color:#147362}.stageNav button.issue{border-color:#e2ab44;color:#926417}
+.area-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.area-nav button{padding:10px 8px;border-radius:10px;border:1px solid #cdddeb;color:#395d77;background:#fff;font-size:12px;font-weight:700;cursor:pointer}.area-nav button.active{background:#1b537d;color:#fff;border-color:#1b537d}.area-nav button.done{border-color:#21a78e}.steps{display:flex;flex-wrap:wrap;gap:7px}.steps .step{cursor:pointer;border:1px solid #d7e4ee;border-radius:9px;padding:8px 10px;background:#f7fbff;font-size:12px}.steps .step.on{background:#dcecf7;border-color:#548ab4;color:#10436e}.steps .step.done{background:#e3f7ed;border-color:#7cd0a6}.stage-status{font-size:12px;color:#57748a;margin:9px 0}.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.editor-grid label{font-size:12px;font-weight:700;color:#34586d}.editor-grid textarea,.editor-grid input{display:block;width:100%;box-sizing:border-box;padding:8px;margin-top:5px;border:1px solid #c8d5e2;border-radius:7px;font:inherit}.editor-grid .wide{grid-column:1/-1}.editor-details{margin:8px 0;border:1px solid #d8e3ee;border-radius:8px;padding:12px}.editor-details summary{cursor:pointer;font-weight:750;color:#204e70}
+@media(max-width:700px){.area-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.editor-grid{grid-template-columns:1fr}.gptext{font-size:12px}}
+.criteria-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 20px}.criteria-card{background:#f5f8fc;border:1px solid #dbe5ed;border-radius:10px;padding:14px}.criteria-card.focus{border:2px solid #265e91;background:#eaf3fd}.criteria-card strong{font-size:13px}.criteria-card p{font-size:12px;line-height:1.6;color:#52697d}.level-guide{border:1px solid #c7d9e8;border-radius:10px;padding:15px;background:#f8fbff;margin-bottom:16px}.level-guide p{font-size:13px}@media(max-width:700px){.criteria-grid{grid-template-columns:1fr}}
+
+/* one-rank / six-domain assessment matrix */
+.unified-guide{background:#f2f7fc;border:1px solid #d1dfed;border-radius:12px;padding:16px 18px;margin:16px 0 20px}.unified-guide h3{margin:0 0 10px;font-size:15px}.unified-guide p{font-size:13px;line-height:1.65;margin:7px 0}.unified-guide b{display:inline-block;min-width:77px;color:#17466d}.eval-area{margin:22px 0 28px;scroll-margin-top:100px}.eval-area>h3{font-size:16px;background:#edf3fa;color:#183b59;padding:12px 15px;border-radius:9px;margin:0 0 10px}.eval-area>h3 small{font-weight:400;color:#698196;font-size:12px}.eval-matrix{display:grid;grid-template-columns:minmax(68px,0.52fr) repeat(3,minmax(0,1fr));border:1px solid #d6e1eb;border-radius:10px;overflow:hidden}.eval-matrix>div,.eval-matrix>label{border-right:1px solid #e1e8f0;border-bottom:1px solid #e1e8f0}.eval-corner{background:#f5f8fb;padding:12px 6px;text-align:center;font-size:12px;font-weight:700}.eval-qhead{padding:12px 11px;background:#f8fafc;min-height:95px}.eval-qhead strong{font-size:13px;display:block}.eval-qhead small{font-size:11px;line-height:1.5;color:#61798e;display:block;margin-top:6px;word-break:keep-all}.eval-rowlabel{padding:14px 6px;background:#fbfcfe;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:13px;font-weight:700}.eval-rowlabel small{font-size:11px;color:#6b8194;font-weight:400}.eval-answer{min-height:51px;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}.eval-answer input{width:17px;height:17px;accent-color:#235f9b;cursor:pointer}.eval-answer span{font-size:12px;color:#48637c}.eval-answer.selected{background:#e3effc}.eval-answer.selected span{font-weight:700;color:#174e85}@media(max-width:580px){.eval-matrix{grid-template-columns:54px repeat(3,minmax(0,1fr))}.eval-qhead{padding:9px 6px;min-height:115px}.eval-qhead strong{font-size:12px}.eval-qhead small{font-size:10px}.eval-answer span{display:none}}
+
+/* 압축형 평가 레이아웃: 질문 왼쪽, 상·중·하 오른쪽 */
+.eval-area{margin:18px 0 24px;scroll-margin-top:95px}
+.eval-area>h3{font-size:18px;padding:14px 18px;margin:0 0 12px;background:#eaf1f8;border-radius:12px;color:#153e60}
+.eval-area>h3 small{font-size:13px;font-weight:500;margin-left:6px}
+.compact-stack{display:grid;gap:10px}
+.question-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;border:1px solid #d9e4ee;border-radius:13px;background:#fff;padding:18px 20px;scroll-margin-top:105px;transition:border-color .2s,background .2s}
+.question-row.missing{border:2px solid #bb4c4c;background:#fffafa}
+.question-main{min-width:0}
+.question-headline{font-size:17px;line-height:1.4;color:#153c60;font-weight:800;margin:0 0 9px}
+.question-headline .qcode{font-size:15px;color:#386f9c;margin-right:8px}
+.question-text{font-size:18px;line-height:1.55;word-break:keep-all;color:#213a51;font-weight:700;margin:0}
+.choice-compact{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.choice-pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;border:1px solid #d1dce7;border-radius:8px;padding:8px 12px;min-width:92px;background:#f9fbfd;color:#37536b;font-size:13px;line-height:1.25;transition:background .15s,border-color .15s;white-space:nowrap}
+.choice-pill input{width:14px;height:14px;margin:0;accent-color:#235f9b;cursor:pointer}
+.choice-pill span{font-weight:700}
+.choice-pill small{font-size:11px;color:#74879a}
+.choice-pill.selected{border-color:#2b6da6;background:#e6f1fd;color:#144f80}
+.choice-pill:focus-within{outline:2px solid #78a8d1;outline-offset:2px}
+#evaluationPanel{max-width:none}
+#evaluationPanel .unified-guide{padding:12px 17px;margin:12px 0 18px}
+#evaluationPanel .unified-guide h3{font-size:14px;margin-bottom:6px}
+#evaluationPanel .unified-guide p{font-size:12px;margin:4px 0;line-height:1.5}
+@media(max-width:980px){.question-row{grid-template-columns:1fr}.choice-compact{justify-content:flex-start;padding-top:6px;border-top:1px solid #edf1f5}.question-text{font-size:17px}}
+@media(max-width:700px){.question-row{padding:15px 14px}.question-headline{font-size:16px}.question-text{font-size:16px}.choice-pill{min-width:78px;padding:8px 10px}.eval-area>h3{font-size:17px}}
+
+/* 질문 중심 표형 평가: 문항 넓게, 응답 열 고정 */
+.eval-area{margin:18px 0 24px;scroll-margin-top:100px}
+.eval-area>h3{margin-bottom:9px;font-size:18px}
+.question-table-wrap{border:1px solid #d4e1ec;border-radius:12px;overflow-x:auto;background:#fff}
+.question-table{display:grid;min-width:715px}
+.qt-head,.question-row{display:grid;grid-template-columns:minmax(0,1fr) 86px 86px 86px;align-items:stretch}
+.qt-head{background:#eff5fa;border-bottom:1px solid #d4e1ec;color:#254c6b;font-weight:800;font-size:13px}
+.qt-head>div{padding:10px 8px;text-align:center;border-left:1px solid #dce5ed}
+.qt-head>div:first-child{text-align:left;padding-left:19px;border-left:0}
+.question-row{border-bottom:1px solid #dde7f0;scroll-margin-top:105px;transition:background .15s}
+.question-row:last-child{border-bottom:0}
+.question-row:nth-child(even){background:#f9fbfd}
+.question-row:hover{background:#f2f8fd}
+.question-row.missing{outline:2px solid #bb4c4c;outline-offset:-2px;background:#fffafa}
+.question-main{min-width:0;padding:15px 18px 16px}
+.question-headline{font-size:15px;line-height:1.4;color:#1b4e77;font-weight:800;margin:0 0 6px}
+.question-headline .qcode{font-size:14px;color:#3875a7;margin-right:7px}
+.question-text{font-size:17px;line-height:1.48;word-break:keep-all;color:#172f44;font-weight:650;margin:0}
+.choice-pill{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;padding:8px 4px;cursor:pointer;border-left:1px solid #e0e8f0;background:transparent;color:#37536b;font-size:13px}
+.choice-pill input{width:17px;height:17px;margin:0;accent-color:#2366a1;cursor:pointer}
+.choice-pill span{font-weight:700}
+.choice-pill small{display:none}
+.choice-pill.selected{background:#deecfa;color:#124d81;box-shadow:inset 0 0 0 1px #70a4d2}
+.choice-pill:focus-within{outline:2px solid #528bbd;outline-offset:-3px}
+#evaluationPanel .unified-guide{padding:15px 18px;margin:12px 0 20px;background:#f2f7fc;border:1px solid #d1dfed;border-radius:12px}
+#evaluationPanel .unified-guide h3{font-size:15px;margin:0 0 9px}
+#evaluationPanel .unified-guide p{font-size:13px;line-height:1.65;margin:6px 0}
+#evaluationPanel .unified-guide b{display:inline-block;min-width:94px}
+@media(max-width:700px){.question-main{padding:13px 12px}.question-text{font-size:15px}.question-table{min-width:650px}.qt-head,.question-row{grid-template-columns:minmax(0,1fr) 72px 72px 72px}}
+
+/* 기본정보 입력란: 한 줄에 한 항목, 보이는 중복 라벨 제거 */
+#identityPanel .fields{display:flex;flex-direction:column;gap:13px;max-width:720px}
+#identityPanel .field{display:block;flex:none;min-width:0;width:100%;font-weight:400}
+#identityPanel .field input{display:block;width:100%;font-size:16px;padding:15px 16px;min-height:52px}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.respondent-type{display:flex;gap:18px;flex-wrap:wrap;border:1px solid #d0dfeb;border-radius:10px;padding:14px 16px;margin-bottom:9px;background:#f5f9fc}.respondent-type legend{font-weight:700;font-size:14px;color:#1d4565;padding:0 7px}.respondent-type label{font-size:15px;font-weight:650;display:flex;align-items:center;gap:8px}.respondent-type input{accent-color:#235f9b;width:17px;height:17px}#identityPanel .respondent-type input{width:17px;min-height:0;padding:0} 
+/* 선택순위 진행 확인 */
+.optional-decision{border:1px solid #bad1e5;border-radius:14px;padding:22px 24px;background:#f4f9fe;margin:18px 0;scroll-margin-top:90px}
+.optional-decision h3{font-size:20px;color:#163e5f;margin:0 0 10px}
+.optional-decision p{color:#506b82;line-height:1.65;margin:0 0 18px}
+.optional-decision .decision-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.optional-decision .decision-buttons button{min-width:175px}
+@media(max-width:580px){.optional-decision{padding:16px}.optional-decision .decision-buttons button{flex:1}}
+
+/* 사업아이템 표시순서 편집 */
+.order-tools{display:flex;gap:5px;align-items:center}.order-tools select{border:1px solid #c7d5e2;border-radius:6px;padding:7px 5px;max-width:72px;background:#fff}.order-tools .btn{padding:7px 10px;font-size:12px;white-space:nowrap}.item{padding-top:26px}.catalog-num{position:absolute;top:5px;left:7px;color:#668199;font-size:10px}.item-sector{display:block;margin-top:5px;font-size:10px;font-weight:700;color:#315f83;line-height:1.35}.matrix th{width:12%}.matrix td{width:17.6%}.edit-table{min-width:1030px}
+/* 사업군 헤더: 순서 변경 후 실제 포함 사업군명을 자동 표시 */
+.matrix th.sector-row-heading{font-size:13px;line-height:1.45;word-break:keep-all;vertical-align:middle;padding:10px 8px}
+.sector-row-name{display:block;overflow-wrap:anywhere}
+.sector-row-name+.sector-row-name{border-top:1px solid #cedce9;margin-top:8px;padding-top:8px}
+.receipt-box{border:1px solid #cbddea;border-radius:13px;padding:20px;margin:14px 0;background:#f6f9fd}.receipt-box.success{border-color:#96cfb0;background:#f0faf4}.receipt-box.unknown{border-color:#e5ca92;background:#fff9ed}.receipt-box strong{display:block;font-size:19px;margin-bottom:7px}.receipt-box p{font-size:14px;line-height:1.6;margin:5px 0}.receipt-box code{overflow-wrap:anywhere;font-size:12px}
+
+/* 외부평가자 고정 배포용 */
+.results{border-collapse:separate!important;border-spacing:0!important;width:100%;border:1px solid #d8e3ed;border-radius:12px;overflow:hidden}
+.results th{background:#e9f1f8!important;color:#173b5b!important;padding:15px 12px!important;font-weight:800!important;border-bottom:2px solid #cad9e6!important;text-align:center}
+.results td{padding:14px 12px!important;border-bottom:1px solid #e4ecf3!important;text-align:center;font-variant-numeric:tabular-nums}
+.results td:nth-child(3){text-align:left}
+.results tbody tr:nth-child(even){background:#f7fafd}
+.results tbody tr:hover{background:#edf6ff}
+#resultContent h3{margin-top:30px;font-size:19px}
+#industryComments textarea,#notes{width:100%;min-height:115px;border-radius:9px;border:1px solid #c6d3df;padding:14px;font-size:14px;box-sizing:border-box}
+#resultPanel .footer-note{display:none}
+#resultPanel .actions{margin-top:20px}
+
+
+/* 최종 결과 요약표: 사업아이템명 포함 모든 셀의 가로/세로 중앙 정렬 */
+.results.summary-results{width:100%;table-layout:fixed}
+.results.summary-results th,.results.summary-results td{text-align:center!important;vertical-align:middle;padding:14px 12px;word-break:keep-all;line-height:1.5}
+.results.summary-results td:nth-child(3) strong{display:block;text-align:center;width:100%}
+@media(max-width:720px){.results.summary-results{min-width:680px}}
+/* 영역별 세부 점수: 순위 및 5개 영역을 동일한 6등분 너비로 표시 */
+.results.score-detail{table-layout:fixed;width:100%;min-width:760px;border:1px solid #d6e3ee;border-radius:10px;overflow:hidden}
+.results.score-detail th,.results.score-detail td{width:16.6667%;text-align:center;vertical-align:middle;padding:14px 8px;white-space:normal;word-break:keep-all;line-height:1.45}
+.results.score-detail thead th{background:#e9f1f8;font-weight:700;border-bottom:1px solid #b8cfdf}
+.results.score-detail tbody tr:nth-child(even){background:#f6f9fc}
+.results.score-detail tbody td:first-child{font-weight:700}
+
+/* 제출 진행 및 완료: 서버의 저장확인 결과만 성공 처리 */
+.submit-overlay{position:fixed;inset:0;z-index:9999;background:rgba(12,32,51,.62);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(3px)}
+.submit-overlay.hidden{display:none!important}
+.submit-dialog{width:min(100%,470px);background:white;border-radius:20px;padding:34px 30px 28px;box-shadow:0 24px 80px #07172652;text-align:center;outline:none}
+.submit-symbol{display:flex;align-items:center;justify-content:center;margin:0 auto 18px;width:74px;height:74px;border-radius:50%;background:#e9f2fc;color:#1b537f;font-size:36px;font-weight:800}
+.submit-symbol.spinner:after{content:'';display:block;width:35px;height:35px;border:4px solid #c0d7ed;border-top-color:#19527e;border-radius:50%;animation:submit-spin .9s linear infinite}
+@keyframes submit-spin{to{transform:rotate(360deg)}}
+.submit-symbol.success{background:#e7f7ed;color:#16804b}.submit-symbol.error{background:#fff0e5;color:#b35e23}
+.submit-dialog h2{margin:0 0 13px;font-size:22px;color:#123451}.submit-dialog p{line-height:1.7;color:#61748b;margin:0 0 10px;word-break:keep-all}
+.submit-dialog .receipt-code{display:inline-block;max-width:100%;padding:8px 10px;margin-top:12px;background:#f0f4f8;border-radius:7px;word-break:break-all;color:#315471;font-size:12px}
+.submit-dialog .submit-actions{margin-top:24px;display:flex;justify-content:center;gap:10px}
+.submit-dialog .submit-actions button{min-width:144px}
+@media(prefers-reduced-motion:reduce){.submit-symbol.spinner:after{animation-duration:2s}}
+
+/* 외부 전문가 안내: 중복 헤더 제거와 전용 정보 디자인 */
+header > p{display:none!important}
+#identityPanel > h2{margin-top:22px;padding-top:0;font-size:19px;letter-spacing:-.02em}
+#identityPanel > .muted{margin:8px 0 17px;color:#647b8e}
+#identityPanel .field input{border-radius:11px;transition:border-color .15s,box-shadow .15s}
+#identityPanel .field input:focus{outline:none;border-color:#3d7eb4;box-shadow:0 0 0 3px rgba(48,112,176,.1)}
+/* 외부 전문가 설문 안내: 기본정보 화면 전용 */
+.survey-intro{background:linear-gradient(135deg,#f6faff 0%,#eef5fc 100%);border:1px solid #cfdeec;border-radius:16px;padding:25px 29px;margin:0 0 24px;color:#183b59;box-shadow:0 6px 22px rgba(34,80,124,.045)}
+.survey-intro h2{font-size:20px;margin:0 0 15px;font-weight:800;color:#143c5e;display:flex;align-items:center;gap:12px;letter-spacing:-.02em}.survey-intro .intro-eyebrow{font-size:10px;letter-spacing:.13em;font-weight:800;color:#3c76aa;background:#dfecf8;border-radius:5px;padding:4px 7px}
+.survey-intro p{font-size:14px;line-height:1.75;margin:0 0 11px;word-break:keep-all;color:#274760}.survey-intro strong{color:#103f68;font-weight:800}
+.survey-intro p:last-child{margin-bottom:0}
+.survey-intro .intro-divider{height:1px;background:#d6e4ef;margin:18px 0 17px}
+.survey-intro .intro-heading{font-size:14px;font-weight:800;margin:17px 0 5px;color:#17466d;display:flex;align-items:center;gap:8px}.survey-intro .intro-heading:before{content:"";display:inline-block;height:13px;width:3px;border-radius:3px;background:#3b85bf}
+.survey-intro .intro-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.survey-intro .intro-chip{border:1px solid #cbddec;background:#fff;border-radius:7px;padding:7px 11px;font-size:12px;font-weight:700;color:#285474}
+@media(max-width:640px){.survey-intro{padding:19px 17px}.survey-intro h2{font-size:19px}.survey-intro p{font-size:13px;line-height:1.7}.survey-intro .intro-chip{font-size:12px}}
+
+/* 외부 전문가 평가관점 최우선 안내 */
+.survey-intro .intro-note{color:#536f86;font-size:13px;margin-top:3px}
+.survey-intro .intro-focus{background:#fff;border:1px solid #b6d1e7;border-left:5px solid #236293;border-radius:12px;padding:21px 23px 19px;margin-top:20px;box-shadow:0 5px 16px rgba(25,73,113,.06)}
+.survey-intro .intro-focus-label{display:flex;align-items:center;gap:9px!important;color:#17486f;font-size:16px;font-weight:800;margin-bottom:13px}
+.survey-intro .focus-dot{width:8px;height:8px;flex-shrink:0;border-radius:50%;background:#2876ad}
+.survey-intro .focus-tag{font-size:11px;font-weight:700;color:#205e90;background:#e8f3fc;border:1px solid #ccdfef;padding:3px 7px;border-radius:5px}
+.survey-intro .intro-focus-lead{font-size:17px;line-height:1.75;font-weight:700;color:#183c5c;margin:0 0 13px;word-break:keep-all}
+.survey-intro .intro-focus-lead strong{font-size:18px;color:#07548e;background:linear-gradient(transparent 65%,#e0effb 65%)}
+.survey-intro .intro-focus>p:not(.intro-focus-label):not(.intro-focus-lead){line-height:1.8;margin:0 0 11px}
+.survey-intro .intro-focus>p:last-child{margin-bottom:0!important}
+@media(max-width:660px){.survey-intro .intro-focus{padding:17px 15px}.survey-intro .intro-focus-lead,.survey-intro .intro-focus-lead strong{font-size:15px}.survey-intro .wide-break{display:none}}
+.intro-focus-details { display: grid; gap: 11px; margin-top: 16px; }
+.intro-focus-details p { margin: 0; line-height: 1.8; word-break: keep-all; }
+.intro-focus-details .intro-focus-closing { margin-top: 3px; }
+
+/* 모바일 사용성 전용 CSS: 저장·채점·제출 로직 변경 없음 */
+@media (max-width: 760px) {
+  html{-webkit-text-size-adjust:100%}
+  body{padding:10px 8px}
+  main{width:100%;min-width:0}
+  header{padding:19px 16px;border-radius:13px}
+  header h1{font-size:21px;line-height:1.4;word-break:keep-all}
+  .panel{padding:16px 12px;margin-top:12px;border-radius:12px}
+  .panel h2{font-size:18px;line-height:1.4}
+  .muted{font-size:13px}
+  .top{align-items:stretch}
+  .fields,.field{min-width:0;max-width:100%}
+  .field input,.field textarea,textarea,input{max-width:100%}
+  .field input, .comment-row textarea{font-size:16px}
+  .btn,.rank{min-height:44px;touch-action:manipulation}
+  .rank-buttons{gap:7px}
+  .rank{padding:11px 13px}
+  .steps{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding-bottom:5px}
+  .matrixwrap{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border-radius:10px}
+  .matrix{min-width:830px;border-spacing:5px}
+  .matrix th{position:sticky;left:0;z-index:2;min-width:130px;box-shadow:2px 0 5px #20394e17}
+  .matrix .item{min-height:146px;height:auto;padding-top:25px}
+  .item-title{font-size:14px}
+  .details{font-size:11px}
+  .question-table-wrap{overflow-x:visible}
+  .question-table{display:block;min-width:0;width:100%}
+  .qt-head{display:none}
+  .question-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:0}
+  .question-main{grid-column:1/-1;padding:14px 13px 13px;border-bottom:1px solid #e5edf4}
+  .question-headline{font-size:15px}
+  .question-text{font-size:16px;line-height:1.55}
+  .choice-pill{min-height:52px;padding:10px 6px;border-left:0;border-right:1px solid #e0e8f0;font-size:15px;touch-action:manipulation}
+  .choice-pill:last-child{border-right:0}
+  .choice-pill input{width:19px;height:19px}
+  .eval-area>h3{font-size:17px}
+  #evaluationPanel .unified-guide{padding:14px 12px}
+  #evaluationPanel .unified-guide b{min-width:67px}
+  .actions{display:flex;gap:9px;flex-wrap:wrap}
+  .actions .btn{flex:1 1 140px}
+  .results{min-width:570px}
+  #resultContent{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .submit-overlay{padding:13px}
+  .submit-dialog{width:100%;max-width:440px;padding:26px 20px 22px;max-height:90dvh;overflow-y:auto}
+  .submit-symbol{width:62px;height:62px}
+}
+@media (max-width: 380px){
+  header h1{font-size:19px}
+  .panel{padding:14px 9px}
+  .rank{padding:9px 10px;font-size:13px}
+  .question-text{font-size:15px}
+}
+</style></head><body><main><header><div style="font-size:12px;letter-spacing:1.5px">NEW BUSINESS STRATEGY</div><h1>신규 사업 후보군 전문가 평가</h1><p>25개 사업아이템 중 3개 우선순위 선정 · 순위별 15문항 평가 (총 45문항)</p></header>
+<div class="gameprogress" id="gameprogress"><div class="gptext"><strong id="journeyTitle">준비 단계</strong><span id="journeyDetails">0 / 45문항 응답</span></div><div class="gprail"><div id="journeyFill"></div></div><div class="gpbadge" id="journeyBadge">평가 진행</div></div>
+<nav aria-label="설문 단계 바로가기" class="stageNav" id="stageNav"></nav><section class="panel" id="identityPanel"><div class="survey-intro" role="note" aria-label="설문 안내">
+<h2 class="intro-title">설문 안내 <span class="intro-eyebrow">GUIDE</span></h2>
+<p>본 설문은 <strong>미래 신규 사업 후보군에 대한 의견</strong>을 수렴하기 위한 평가입니다.</p>
+<p><strong>25개 사업아이템 중 우선순위 3개를 선정</strong>한 뒤,</p>
+<p>각 사업아이템에 대해 <strong>15문항씩, 총 45문항</strong>을 평가해 주시면 됩니다.</p>
+<p class="intro-note">※ 필요 시 자유의견을 추가로 작성하실 수 있습니다.</p>
+<div class="intro-divider" aria-hidden="true"></div>
+<p class="intro-heading">사업아이템 발굴 배경 및 구성</p>
+<p>글로벌 주요 전문기관의 <strong>기술·산업 전망 자료</strong>와 국내외 기업의 <strong>사업·투자 동향</strong> 등을 참고하여,</p>
+<p>중장기 성장 가능성이 높은 신사업 후보군을 검토하였습니다.</p>
+<p>이를 바탕으로 <strong>AI·데이터센터, 로봇, 배터리·에너지, 반도체, 전력 인프라</strong> 등</p>
+<p><strong>5개 산업군, 총 25개 사업아이템</strong>으로 구성하였으며,</p>
+<p>각 사업의 이해를 돕기 위해 대표 제품·서비스 예시를 함께 제시하였습니다.</p>
+<div class="intro-focus" role="note" aria-label="평가 시 가장 중요한 안내">
+ <p class="intro-focus-label"><span class="focus-dot" aria-hidden="true"></span>평가 시 고려사항 <span class="focus-tag">중요 안내</span></p>
+ <p class="intro-focus-lead">특정 기업의 현재 사업 역량이나 투자여건보다는<br class="wide-break"/> <strong>각 사업아이템 자체의 시장성과 성장 잠재력</strong>을 중심으로 평가해 주십시오.</p>
+ <div class="intro-focus-details">
+ 
+ <p>각 사업이 시장에서 독립적으로 성장할 가능성과 고객에게 제공할 가치를 기준으로 판단해 주시기 바랍니다.</p>
+ <p>시장 성장 가능성, 고객 수요, 경쟁우위 확보 가능성, 사업화 실현성 및 투자경제성을 종합적으로 고려하되,</p>
+ <p class="intro-focus-closing"><strong>보유하신 산업 지식과 현장 경험을 바탕으로 객관적이고 독립적으로 평가</strong>해 주십시오.</p>
+ </div>
+</div>
+<div class="intro-meta"><span class="intro-chip">평가 방식 · 상 / 중 / 하 3단계</span><span class="intro-chip">총 45문항</span></div>
+</div><h2>01. 기본정보</h2><p class="muted">아래 기본정보를 입력해 주십시오.</p><div class="fields"><input aria-hidden="true" checked="" hidden="" name="respondentType" type="radio" value="external"/><label class="field"><span class="visually-hidden" id="orgLabel">소속 / 학교 (필수)</span><input aria-labelledby="orgLabel" autocomplete="organization" id="org" placeholder="소속 / 학교" required=""/></label><label class="field"><span class="visually-hidden" id="deptLabel">부서 / 담당업무 / 학부 / 학과 (필수)</span><input aria-labelledby="deptLabel" id="department" placeholder="부서 / 담당업무 / 학부 / 학과" required=""/></label><label class="field"><span class="visually-hidden" id="personLabel">성명 (필수)</span><input aria-labelledby="personLabel" autocomplete="name" id="person" placeholder="성명" required=""/></label><label class="field"><span class="visually-hidden" id="emailLabel">이메일 주소 (필수)</span><input aria-labelledby="emailLabel" autocomplete="email" id="email" type="email" inputmode="email" placeholder="이메일 주소" required=""/></label></div><div class="actions"><button class="btn" id="identityNext" type="button">사업아이템 선정으로 →</button></div><p class="status warn" id="identityMsg"></p></section>
+<section class="panel hidden" id="choicePanel"><h2>02. 우선순위 사업아이템 선정</h2><p class="muted">25개 사업아이템 중 서로 다른 3개를 선정해 주세요.</p><div class="rank-buttons"><button class="rank active" data-rank="1" type="button">① 1순위</button><button class="rank" data-rank="2" type="button">② 2순위</button><button class="rank" data-rank="3" type="button">③ 3순위</button></div><div class="matrixwrap"><table class="matrix"><tbody id="grid"></tbody></table></div><div class="actions"><button class="btn secondary" id="resetChoice" type="button">선택 초기화</button><button class="btn" id="beginEval" type="button">평가 시작 →</button></div><p class="status warn" id="choiceMsg" role="status"></p><div class="hidden" id="chosen"></div></section>
+<section class="panel hidden" id="evaluationPanel"><div class="steps" id="steps"></div><div class="progress"><div id="progressBar"></div></div><div class="area-nav" id="areaNav"></div><h2 id="evalTitle"></h2><p class="subject" id="evalSubject"></p><p class="muted" id="evaluationGuide">각 질문을 읽고 상·중·하 중 하나를 선택해 주세요.</p><div id="criteriaGuide"></div><div id="questionList"></div><div class="actions"><button class="btn secondary" id="evalPrev" type="button">← 이전 단계</button><button class="btn" id="evalNext" type="button">다음 단계 →</button></div><p class="status warn" id="evalMsg" role="status"></p></section>
+<section class="panel hidden" id="resultPanel"><h2>최종 평가 결과 확인 및 제출</h2><p class="muted">진행한 평가결과를 확인하세요.</p><div id="resultContent"></div><section aria-labelledby="commentTitle" style="margin-top:24px"><h3 id="commentTitle">선택한 사업아이템별 자유 의견 (선택사항)</h3><p class="muted">선택한 사업아이템에 대한 의견을 자유롭게 작성해 주십시오.</p><div id="industryComments"></div></section><label class="field" style="margin-top:14px">최종 자유 의견<textarea id="notes" placeholder="의견을 자유롭게 작성해 주십시오." rows="4"></textarea></label><div class="actions"><button class="btn secondary" id="backEval" type="button">← 3순위 평가로</button><span> <button class="btn" id="submitRemote" type="button">최종 제출</button></span></div><p class="status" id="submitStatus" role="status"></p><div aria-live="polite" class="hidden" id="submissionReceipt" role="status"></div></section>
+</main><div id="submitOverlay" class="submit-overlay hidden" aria-hidden="true"><div id="submitDialog" class="submit-dialog" role="dialog" aria-modal="true" aria-labelledby="submitDialogTitle" aria-describedby="submitDialogText" tabindex="-1"><div id="submitSymbol" class="submit-symbol spinner" aria-hidden="true"></div><h2 id="submitDialogTitle">평가 결과를 제출하고 있습니다</h2><p id="submitDialogText">응답을 전송하고 Google Sheets 저장 여부를 확인하고 있습니다. 잠시만 기다려 주세요.</p><div id="submitDialogReceipt" class="receipt-code hidden"></div><div id="submitDialogActions" class="submit-actions hidden"><button class="btn" id="submitDialogClose" type="button">확인</button></div></div></div><script>
+const DEFAULT_GROUPS=[["AI솔루션·데이터센터 인프라", "데이터센터 냉각·열관리", "데이터센터 운영·에너지 관리", "AI 데이터센터 구축", "산업특화 AI 자동화", "기업용 AI 에이전트"], ["피지컬 AI·로봇", "자율이동 로봇·산업용 드론", "로봇 센서·인지부품", "산업용 로봇 제조", "로봇 AI 학습·제어", "로봇 자동화 구축·운영"], ["배터리·청정에너지", "배터리 소재·열관리 부품", "청정에너지 발전·전환 설비", "전기차 초급속 충전 인프라", "ESS 배터리·시스템 구축", "ESS 운영·분산에너지 관리"], ["반도체·첨단 칩", "AI·고성능 반도체", "차세대 전력반도체", "반도체 제조·패키징 장비", "반도체 검사·테스트 장비", "반도체 공정소재·공장 인프라"], ["전력망·전력 인프라", "AI 전력망 운영·자산관리", "송배전 인프라 구축·유지보수", "송배전 전력기기 제조", "지능형 전력망 감시·제어", "전력망 용량증대·흐름제어"]];
+const DEFAULT_DESCRIPTIONS=["액침냉각 시스템 · 서버 직접수랭 설비 · 냉각수 분배장치(CDU)", "데이터센터 통합관제(DCIM) · AI 냉각 최적화 · 설비 유지관리", "AI 데이터센터 EPC · 모듈형 데이터센터 · 고밀도 서버실 구축", "AI 품질검사 · 설비 고장예측 AI · 수요예측 AI", "업무용 AI 비서 · 고객상담 AI · AI 에이전트 관리 플랫폼", "자율이동 물류로봇(AMR) · 시설점검 드론 · 산업용 운송 드론", "3D 비전 카메라 · 라이다 센서 · 힘 센서", "산업용 로봇팔 · 협동로봇 · 용접", "로봇 시뮬레이터 · AI 동작학습 SW · 로봇 제어 플랫폼", "로봇 생산라인 구축 · 물류창고 자동화 · 통합 유지관리", "양극재 · 분리막 · 배터리 냉각판", "태양광 발전설비 · 연료전지 발전시스템 · 산업용 전기히트펌프", "초급속 충전기 · 전기버스 충전시설 · 충전소 구축", "대형 ESS 배터리팩 · 컨테이너형 ESS · ESS 통합 구축", "ESS 운영 최적화 SW · 가상발전소(VPP) · 에너지관리시스템(EMS)", "GPU · AI 가속기(NPU · ASIC)", "SiC 전력반도체 · GaN 전력반도체 · 고효율 전력모듈", "식각장비 · 증착장비 · 반도체 본딩장비", "웨이퍼 결함검사 장비 · 자동 테스트 장비(ATE) · X-ray 검사장비", "반도체 특수가스 · 포토레지스트 · 초순수 공급설비", "변압기 고장예측 AI · 전력수요 예측 SW · 설비 자산관리 플랫폼", "송전선로 건설 · 변전소 EPC · 송배전 설비 점검", "초고압 변압기 · 전력 차단기 · 송배전 케이블", "전력망 통합관제(SCADA) · 배전자동화 · 변전소 자동화", "고용량 송전선 · 유연송전시스템(FACTS) · HVDC 설비"];
+const QUESTIONS=[{"section": "시장 매력도", "weight": 20, "code": "M1", "title": "시장규모", "question": "현실적으로 진입 가능한 시장에서 의미 있는 매출을 창출할 수 있는가?", "options": ["충분한 고객·용도와 매출 기회가 확인됨", "유의미한 규모이나 수요 범위·점유 가능성이 불확실함", "진입 가능 시장이 작거나 경제적 규모 확보가 어려움"]}, {"section": "시장 매력도", "weight": 20, "code": "M2", "title": "성장 지속성", "question": "향후 5~10년간 수요가 구조적으로 성장하는가?", "options": ["장기 성장동인과 투자·수요 지표가 뒷받침됨", "성장이 예상되나 경기·정책·기술 전환에 민감함", "수요 정체·축소 또는 일시적 과열 가능성이 높음"]}, {"section": "시장 매력도", "weight": 20, "code": "M3", "title": "이익 풀", "question": "해당 시장에서 지속적인 부가가치와 이익을 확보할 수 있는가?", "options": ["가치사슬 내 수익성 높은 포지션이 존재함", "수익 기회가 있으나 가격·원가 압력이 상당함", "구조적 저수익·과잉공급·심한 가격경쟁이 예상됨"]}, {"section": "고객 수요·가치", "weight": 20, "code": "C1", "title": "문제의 중요성", "question": "고객이 해결해야 하는 문제가 중요하고 긴급한가?", "options": ["비용·생산성·안전·규제 등 핵심 경영문제 해결", "개선 필요성은 있으나 구매 우선순위 불확실", "고객 문제의 중요성이 낮거나 수요 근거 부족"]}, {"section": "고객 수요·가치", "weight": 20, "code": "C2", "title": "고객 경제적 효익", "question": "기존 대안 대비 구체적인 경제적 가치를 제공할 수 있는가?", "options": ["원가 절감·매출 증가·위험 감소 효과가 뚜렷함", "효익 가능성은 있으나 경제적 효과 검증 필요", "대안 대비 효익이 미미하거나 비용 부담이 큼"]}, {"section": "고객 수요·가치", "weight": 20, "code": "C3", "title": "상업화·수익화", "question": "명확한 구매자와 지불구조를 기반으로 지속적인 매출을 창출할 수 있는가?", "options": ["예산권자·구매동기·가격구조·수익모델 명확", "고객군·수익구조 확인되나 구매 조건 불확실", "구매 주체·지불의사·수익모델 불명확"]}, {"section": "경쟁우위 확보 가능성", "weight": 20, "code": "A1", "title": "경쟁구조", "question": "기존 경쟁자와 시장구조상 신규 진입자가 경쟁할 여지가 있는가?", "options": ["진입 가능한 틈새·미충족 수요와 유리한 경쟁구조 존재", "진입 가능하지만 강력한 기존 사업자 존재", "기존 사업자의 구조적 지배력으로 진입 매우 어려움"]}, {"section": "경쟁우위 확보 가능성", "weight": 20, "code": "A2", "title": "차별화 잠재력", "question": "원가·성능·품질·서비스 중 유의미한 차별화를 구축할 수 있는가?", "options": ["고객에게 중요한 차별화 포인트와 달성 경로 명확", "부분적 차별화 가능성 있으나 지속성 불확실", "대체재 대비 실질적 차별화가 어려움"]}, {"section": "경쟁우위 확보 가능성", "weight": 20, "code": "A3", "title": "우위 지속성", "question": "차별화된 경쟁력을 경쟁사가 쉽게 모방하지 못하도록 만들 수 있는가?", "options": ["IP·노하우·규모·인증·전환비용 등 방어구조 구축 가능", "일정한 우위 가능하나 모방·대체 위험 존재", "진입 후에도 경쟁우위 유지가 매우 어려움"]}, {"section": "진입·사업화 실현성", "weight": 20, "code": "F1", "title": "기술 확보·상용화", "question": "사업에 필요한 핵심기술을 확보하고 상용화할 수 있는가?", "options": ["기술 검증 및 확보 경로가 현실적·구체적", "기술은 존재하나 추가 개발·제휴 필요", "기술 난도가 매우 높거나 접근 경로 불명확"]}, {"section": "진입·사업화 실현성", "weight": 20, "code": "F2", "title": "진입 경로", "question": "자체 개발·제휴·M&A 등 현실적인 시장 진입 방안이 존재하는가?", "options": ["실행 방식·잠재 파트너·필요 자원과 기간 구체적", "진입 시나리오 있으나 주요 조건 미확인", "현실적인 진입 경로를 찾기 어려움"]}, {"section": "진입·사업화 실현성", "weight": 20, "code": "F3", "title": "실행체계 구축", "question": "사업화에 필요한 인증·인력·공급망·운영체계를 현실적으로 구축할 수 있는가?", "options": ["핵심 요건과 구축 경로 명확, 장애요인 관리 가능", "추가 인력·인증·공급망 확보 필요", "구축 난도·기간·비용이 중대한 진입장벽"]}, {"section": "투자경제성", "weight": 20, "code": "E1", "title": "기대 수익성", "question": "현실적 점유율과 원가구조를 고려할 때 충분한 수익이 기대되는가?", "options": ["동종업계·유사사업 대비 매력적인 수익성 예상", "목표 수익 가능하나 원가·판매 가정에 민감", "구조적으로 목표 수익성 달성이 어려움"]}, {"section": "투자경제성", "weight": 20, "code": "E2", "title": "자본효율", "question": "필요 투자규모 대비 투자회수기간과 예상 현금흐름이 적정한가?", "options": ["합리적 투자로 목표 회수·현금흐름 달성 가능", "회수 가능하나 투자규모·기간 부담 존재", "과도한 자본 소요 또는 회수 가능성 낮음"]}, {"section": "투자경제성", "weight": 20, "code": "E3", "title": "하방위험·투자유연성", "question": "실패 시 손실을 제한하거나 단계적으로 투자할 수 있는가?", "options": ["소규모 실증·단계투자·전환·철수 가능", "일부 단계투자 가능하나 매몰비용 상당", "대규모 선투자 필수, 실패 시 손실 통제 어려움"]}, {"section": "전략적 가치·확장성", "weight": 20, "code": "S1", "title": "그룹 전략적 가치", "question": "그룹의 미래 성장축이나 사업 포트폴리오를 강화할 수 있는가?", "options": ["새로운 성장 플랫폼·핵심 사업축 형성 가능", "기존 사업 보완 또는 제한적 포트폴리오 기여", "그룹 전략에 대한 장기 기여도 낮음"]}, {"section": "전략적 가치·확장성", "weight": 20, "code": "S2", "title": "그룹 자원 레버리지", "question": "기존 그룹 역량이나 네트워크를 경쟁우위의 출발점으로 활용할 수 있는가?", "options": ["기술·설비·공급망·고객·실증환경 활용 효과 큼", "일부 자원 활용 가능하나 신규 역량 상당 부분 필요", "그룹 보유역량 활용 효과 제한적"]}, {"section": "전략적 가치·확장성", "weight": 20, "code": "S3", "title": "사업 확장 옵션", "question": "최초 사업을 기반으로 추가 제품·고객·시장으로 확장할 수 있는가?", "options": ["연관제품·산업·해외시장 등 복수 성장경로 명확", "일부 확장 가능성 있으나 검증 부족", "단일 제품·고객 의존, 확장 잠재력 제한"]}];
+const KEY='dw-business-survey-wizard-v2';
+const INITIAL_ENDPOINT='https://script.google.com/macros/s/AKfycbwauZDiSXNkIIciJa3Agvz4g0CDoy5HU-wbAv7NTkQ27scCEFMPsnfoI2J0fCUP7O_y/exec';
+let groups=structuredClone(DEFAULT_GROUPS),descriptions=[...DEFAULT_DESCRIPTIONS],endpoint=INITIAL_ENDPOINT;
+const DEFAULT_GUIDES=[
+{summary:'시장 규모·성장성·수익 창출 가능성을 종합적으로 판단',levels:['진입 가능 시장이 충분히 크고 구조적 성장 및 이익 기회가 뚜렷함','시장은 유의미하나 성장·수익성에 불확실성이 존재함','시장 규모나 지속 성장·수익 기회가 제한적임']},
+{summary:'고객의 문제 해결 필요성과 경제적 효익을 종합적으로 판단',levels:['고객 문제의 중요성이 높고 도입에 따른 경제적 효과가 명확함','고객 필요성과 효익이 예상되나 추가 검증이 필요함','고객 필요성이 낮거나 실질적 경제적 효익이 부족함']},
+{summary:'경쟁구조·차별화 가능성·우위 지속성을 종합적으로 판단',levels:['명확한 차별화와 지속 가능한 경쟁우위 확보가 가능함','차별화 여지는 있으나 경쟁압력과 모방 위험이 존재함','경쟁이 치열하고 의미 있는 우위를 확보하기 어려움']},
+{summary:'기술 확보·진입 경로·실행체계 구축 가능성을 종합적으로 판단',levels:['기술·파트너·인력과 실행 경로가 구체적으로 확보 가능함','진입 가능하나 핵심 역량 확보 및 사업화 검증이 필요함','기술·인력·규제·실행 측면의 진입장벽이 큼']},
+{summary:'수익성·자본효율·투자위험을 종합적으로 판단',levels:['수익성과 투자효율이 높고 위험을 관리할 수 있음','수익성이 기대되나 투자비와 회수 위험이 존재함','대규모 투자 대비 수익성이 낮거나 위험이 과도함']},
+{summary:'그룹 시너지·전략적 가치·사업 확장성을 종합적으로 판단',levels:['그룹과 시너지가 크고 전략적 중요성 및 확장 가능성이 높음','일부 시너지·확장 기회가 있으나 실행 조건이 필요함','그룹 연계성과 확장 가능성이 낮음']}
+];let guides=structuredClone(DEFAULT_GUIDES);
+const DEFAULT_ITEM_ORDER=Array.from({length:25},(_,i)=>i);let itemOrder=[...DEFAULT_ITEM_ORDER];
+const ORIGINAL_QUESTIONS=structuredClone(QUESTIONS);let questions=structuredClone(QUESTIONS);
+const DEFAULT_TEXTS={headerTitle:"신규 사업 후보군 전문가 평가",headerSub:"25개 사업아이템 중 3개 우선순위 선정 · 순위별 15문항 평가 (총 45문항)",identityTitle:"01. 기본정보",identityGuide:"아래 기본정보를 입력해 주십시오.",organization:"소속/학교",department:"부서/담당업무/학부/학과",name:"성명",choiceTitle:"02. 우선순위 사업아이템 선정",choiceGuide:"25개 사업아이템 중 서로 다른 3개를 선정해 주세요.",evaluationGuide:"각 질문을 읽고 상·중·하 중 하나를 선택해 주세요.",unifiedHigh:"평가항목의 충족 수준이 높고, 실현 가능성과 기대효과가 우수함",unifiedMid:"평가항목을 일정 수준 충족하나, 일부 불확실성으로 추가 검증이 필요함",unifiedLow:"평가항목의 충족 수준이 낮고, 실현 가능성 또는 기대효과가 제한적임",resultTitle:"최종 평가 결과 확인 및 제출",commentTitle:"선택한 사업아이템별 자유 의견",commentGuide:"선택한 사업아이템에 대한 의견을 자유롭게 작성해 주십시오.",notesLabel:"최종 자유 의견",submitLabel:"최종 제출",nextLabel:"다음 단계 →",prevLabel:"← 이전 단계"};let texts={...DEFAULT_TEXTS};
+let activeRank=1,current=0;const submissionId=(typeof crypto!=="undefined"&&crypto.randomUUID)?crypto.randomUUID():"survey-"+Date.now()+"-"+Math.random().toString(36).slice(2);const picks=Array(3).fill(null),answers=Array.from({length:3},()=>({}));
+const $=id=>document.getElementById(id);const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function applyTexts(){
+ const pairs=[['headerTitle','header h1'],['headerSub','header p'],['identityTitle','#identityPanel > h2'],['identityGuide','#identityPanel .muted'],['choiceTitle','#choicePanel h2'],['choiceGuide','#choicePanel > .muted'],['evaluationGuide','#evaluationGuide'],['resultTitle','#resultPanel h2'],['commentGuide','#resultPanel section[aria-labelledby="commentTitle"] > p']];
+ pairs.forEach(([key,selector])=>{const el=document.querySelector(selector);if(el)el.textContent=texts[key]});
+ const ct=$('commentTitle');if(ct)ct.textContent=texts.commentTitle+' (선택사항)';
+ const ns=$('notes')?.closest('label');if(ns)ns.firstChild.textContent=texts.notesLabel;
+ $('submitRemote').textContent=texts.submitLabel;
+ const fields=[['org','orgLabel',texts.organization],['department','deptLabel',texts.department],['person','personLabel',texts.name]];fields.forEach(([inputId,labelId,label])=>{const el=$(inputId),lab=$(labelId);if(el)el.placeholder=label;if(lab)lab.textContent=label+' (필수)'});
+}
+function nameOf(id){return groups[Math.floor(id/5)][1+id%5]}
+function sectionOf(id){return groups[Math.floor(id/5)][0]}
+function renderGrid(){
+ $('grid').innerHTML=Array.from({length:5},(_,row)=>`<tr><th class="sector-row-heading">${[...new Set(itemOrder.slice(row*5,row*5+5).map(id=>sectionOf(id)))].map(group=>`<span class="sector-row-name">${escapeHTML(group)}</span>`).join('')}</th>${itemOrder.slice(row*5,row*5+5).map((id,j)=>{const k=picks.indexOf(id),position=row*5+j+1;return `<td><button type="button" class="item" data-id="${id}" ${k<0?'':`data-rank="${k+1}"`}><span class="catalog-num">${position}번</span><strong class="item-title">${escapeHTML(nameOf(id))}</strong><span class="details">${escapeHTML(descriptions[id])}</span>${k<0?'':`<span class="tag">${k+1}순위</span>`}</button></td>`}).join('')}</tr>`).join('');
+ $('chosen').innerHTML=picks.map((id,i)=>`<article><strong>${i+1}순위</strong>${id===null?'미선정':escapeHTML(nameOf(id))}</article>`).join('');
+ document.querySelectorAll('.rank-buttons [data-rank]').forEach(b=>b.classList.toggle('active',Number(b.dataset.rank)===activeRank));
+}
+let area=0,screen='identity';
+let optionalPendingRank=null;
+let optionalOfferRank=null;
+const optionalEnabled=[false,false];
+function show(which){screen=which;for(const id of ['identityPanel','choicePanel','evaluationPanel','resultPanel'])$(id).classList.toggle('hidden',id!==({identity:'identityPanel',choice:'choicePanel',evaluation:'evaluationPanel',result:'resultPanel'}[which]));renderJourney();window.scrollTo({top:0,behavior:'instant'})}
+const respondentType=()=>document.querySelector('input[name="respondentType"]:checked')?.value||'';
+const applicableQuestions=()=>questions.filter(q=>respondentType()==='internal'||!q.code.startsWith('S'));
+const selectedRanks=()=>[0,1,2].filter(i=>picks[i]!==null);
+const nextRank=i=>selectedRanks().find(n=>n>i);
+const previousRank=i=>[...selectedRanks()].reverse().find(n=>n<i);
+function hasRequiredPicks(){return picks.length===3&&picks.every(x=>x!==null)&&new Set(picks).size===3}
+function allComplete(){return !!respondentType()&&hasRequiredPicks()&&selectedRanks().every(i=>applicableQuestions().every(q=>[1,2,3].includes(answers[i][q.code])))}
+function go(stage,rank=0,section=0){
+ if(stage==='result'&&!allComplete()){alert('1~3순위 평가를 모두 완료해 주세요.');return}
+ if(stage==='evaluation'){
+  if(!hasRequiredPicks()){alert('사업아이템 1~3순위를 모두 선정해 주세요.');show('choice');return}
+  if(rank>2||picks[rank]===null){return}
+  current=rank;area=section;renderEval();
+ }else if(stage==='result')renderResults();show(stage);
+}
+function renderJourney(){
+ const count=selectedRanks().reduce((n,i)=>n+applicableQuestions().filter(q=>[1,2,3].includes(answers[i][q.code])).length,0);
+ const total=Math.max(3,selectedRanks().length)*applicableQuestions().length;
+ const pct=Math.round(count/total*100);
+ let lvl=pct>=90?5:pct>=65?4:pct>=40?3:pct>=15?2:1;
+ const titles=['','🌱 탐색가','🚀 개척자','⚡ 도전자','💎 전문가','🏆 마스터'];
+ $('gameprogress').className='gameprogress level'+lvl;$('journeyFill').style.width=pct+'%';$('journeyBadge').textContent=titles[lvl];
+ $('journeyDetails').textContent=`${count} / ${total}문항 · ${pct}% 완료`;
+ $('journeyTitle').textContent=screen==='identity'?'기본정보 입력':screen==='choice'?'사업아이템 선정':screen==='result'?'최종 제출':`${current+1}순위 평가`;
+ $('stageNav').innerHTML=[['identity','기본정보'],['choice','사업 선정'],...selectedRanks().map(i=>['evaluation',`${i+1}순위 평가`,i]),['result','최종 제출']].map(([k,t,n])=>`<button type="button" data-stage="${k}" ${n===undefined?'':`data-rank="${n}"`} class="${screen===k&&(n===undefined||current===n)?'active':''} ${k==='evaluation'&&applicableQuestions().every(q=>[1,2,3].includes(answers[n]?.[q.code]))?'done':''}">${t}</button>`).join('');
+}
+$('stageNav').onclick=e=>{const b=e.target.closest('[data-stage]');if(b)go(b.dataset.stage,Number(b.dataset.rank||0),0)};
+$('identityNext').onclick=()=>{if(!$('org').value.trim()||!$('person').value.trim()||!$('department').value.trim()||!$('email').validity.valid||!$('email').value.trim()||!respondentType()){$('identityMsg').textContent='소속 / 학교, 부서 / 담당업무 / 학부 / 학과, 성명과 올바른 이메일 주소를 입력해 주세요.';return}$('identityMsg').textContent='';go('choice')};
+document.querySelectorAll('[name="respondentType"]').forEach(el=>el.addEventListener('change',()=>{if(el.checked&&el.value==='external')answers.forEach(a=>['S1','S2','S3'].forEach(k=>delete a[k]));renderJourney()}));
+$('org').addEventListener('input',renderJourney);$('person').addEventListener('input',renderJourney);$('department').addEventListener('input',renderJourney);$('email').addEventListener('input',renderJourney);
+$('grid').addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(!b)return;const id=+b.dataset.id,k=picks.indexOf(id);if(k>=0&&k!==activeRank-1){$('choiceMsg').textContent=`이미 ${k+1}순위로 선택했습니다. 다른 아이템을 선택하세요.`;return}if(picks[activeRank-1]!==id){answers[activeRank-1]={};if(activeRank>=4)optionalEnabled[activeRank-4]=false;}picks[activeRank-1]=picks[activeRank-1]===id?null:id;if(picks[activeRank-1]!==null&&activeRank<3)activeRank++;$('choiceMsg').textContent='';renderGrid()});
+document.querySelectorAll('[data-rank]').forEach(b=>b.addEventListener('click',()=>{activeRank=+b.dataset.rank;renderGrid()}));
+$('resetChoice').onclick=()=>{optionalPendingRank=null;optionalEnabled[0]=false;optionalEnabled[1]=false;picks.fill(null);for(const x of answers)Object.keys(x).forEach(k=>delete x[k]);activeRank=1;renderGrid()};
+$('beginEval').onclick=()=>{if(!$('org').value.trim()||!$('person').value.trim()||!$('department').value.trim()||!$('email').validity.valid||!$('email').value.trim()||!respondentType()){$('choiceMsg').textContent='소속/학교, 부서/담당업무/학부/학과, 성명을 먼저 입력해 주세요.';return}if(!hasRequiredPicks()){$('choiceMsg').textContent='평가를 시작하려면 1~3순위 사업아이템을 모두 선정해 주세요.';return}if(optionalPendingRank!==null){const n=optionalPendingRank;if(picks[n]===null){$('choiceMsg').textContent=`${n+1}순위 사업아이템을 선택해 주세요.`;activeRank=n+1;renderGrid();return}optionalEnabled[n-3]=true;optionalPendingRank=null;go('evaluation',n,0);return}go('evaluation',0,0)};
+function renderEval(){
+ 
+ const rank=current+1;
+ $('evalTitle').textContent=`${rank}순위 - 평가대상: ${nameOf(picks[current])} | ${sectionOf(picks[current])}`;
+ $('evalSubject').textContent=`${rank}순위 평가 · 총 ${applicableQuestions().length}문항`;
+ $('steps').innerHTML=selectedRanks().map(n=>`<button type="button" data-eval-rank="${n}" class="step ${n===current?'on':''} ${applicableQuestions().every(q=>[1,2,3].includes(answers[n][q.code]))?'done':''}">${n+1}순위 ${applicableQuestions().filter(q=>[1,2,3].includes(answers[n][q.code])).length}/${applicableQuestions().length}</button>`).join('');
+ $('areaNav').innerHTML='';
+ $('progressBar').style.width=(selectedRanks().reduce((a,i)=>a+applicableQuestions().filter(q=>[1,2,3].includes(answers[i][q.code])).length,0)/(selectedRanks().length*applicableQuestions().length)*100)+'%';
+ $('criteriaGuide').innerHTML=`<div class="unified-guide"><h3>상·중·하 통합 평가기준</h3>${[['상 (3점)',texts.unifiedHigh],['중 (2점)',texts.unifiedMid],['하 (1점)',texts.unifiedLow]].map(([label,v])=>`<p><b>${label}</b> ${escapeHTML(v)}</p>`).join('')}</div>`;
+ $('questionList').innerHTML=Array.from({length:respondentType()==='internal'?6:5},(_,i)=>{
+  const qs=questions.slice(i*3,i*3+3),section=qs[0].displaySection||qs[0].section;
+  return `<section class="eval-area"><h3>${String(i+1).padStart(2,'0')} ${escapeHTML(section)} <small>(${qs[0].weight}점)</small></h3><div class="question-table-wrap"><div class="question-table" role="group" aria-label="${escapeHTML(section)} 평가">${qs.map(q=>`<div class="question-row" id="row-${q.code}"><div class="question-main"><h4 class="question-headline"><span class="qcode">${escapeHTML(q.code)}.</span>${escapeHTML(q.title)}</h4><p class="question-text">${escapeHTML(q.question)}</p></div>${[['상',3],['중',2],['하',1]].map(([label,val])=>`<label class="choice-pill ${answers[current][q.code]===val?'selected':''}"><input type="radio" name="answer-${q.code}" value="${val}" data-code="${q.code}" ${answers[current][q.code]===val?'checked':''} aria-label="${escapeHTML(q.code)} ${escapeHTML(q.title)} ${label} ${val}점"><span>${label}</span></label>`).join('')}</div>`).join('')}</div></div></section>`
+ }).join('');
+ $('evalMsg').textContent='';$('evalNext').textContent=current===2?'최종 결과 확인 →':`${current+2}순위 평가 →`;$('evalPrev').textContent=previousRank(current)===undefined?'← 사업아이템 선정':`← ${previousRank(current)+1}순위 평가`;renderJourney();
+}
+$('steps').onclick=e=>{const b=e.target.closest('[data-eval-rank]');if(b)go('evaluation',Number(b.dataset.evalRank),0)};
+$('questionList').addEventListener('change',e=>{if(!e.target.matches('[data-code]'))return;answers[current][e.target.dataset.code]=Number(e.target.value);$('evalMsg').textContent='';document.querySelectorAll(`[name="${e.target.name}"]`).forEach(r=>r.closest('.choice-pill').classList.toggle('selected',r.checked));renderJourney();$('steps').querySelectorAll('[data-eval-rank]').forEach(b=>{const n=Number(b.dataset.evalRank),cnt=applicableQuestions().filter(q=>[1,2,3].includes(answers[n][q.code])).length;b.textContent=`${n+1}순위 ${cnt}/${applicableQuestions().length}`;b.classList.toggle('done',cnt===applicableQuestions().length)})});
+$('evalPrev').onclick=()=>{if(previousRank(current)!==undefined)go('evaluation',previousRank(current),0);else go('choice')};
+$('evalNext').onclick=()=>{const missing=applicableQuestions().filter(q=>![1,2,3].includes(answers[current][q.code]));if(missing.length){$('evalMsg').textContent=`미응답 ${missing.length}개 문항이 있습니다: ${missing.map(q=>q.code).join(', ')}`;const first=document.getElementById('row-'+missing[0].code);first?.scrollIntoView({behavior:'smooth',block:'center'});first?.classList.add('missing');setTimeout(()=>first?.classList.remove('missing'),1600);return}if(current<2)go('evaluation',current+1,0);else go('result')};
+$('backEval').onclick=()=>go('evaluation',2,0);
+function scoreOf(idx){return questions.filter(q=>!q.code.startsWith('S')).reduce((acc,q)=>acc+(Number(answers[idx][q.code]||0)/9*20),0)}
+function strategicScoreOf(idx){return respondentType()==='internal'?questions.filter(q=>q.code.startsWith('S')).reduce((acc,q)=>acc+(Number(answers[idx][q.code]||0)/9*100),0):null}
+function sectionScores(idx){const res={};for(const q of questions)res[q.section]=(res[q.section]||0)+(Number(answers[idx][q.code]||0)/9*(q.code.startsWith('S')?100:20));return res}
+function renderResults(){
+ renderIndustryComments();
+ const sections=[...new Set(applicableQuestions().map(q=>q.section))];
+ $('resultContent').innerHTML=`<table class="results summary-results"><colgroup><col style="width:12%"><col style="width:27%"><col style="width:41%"><col style="width:20%"></colgroup><thead><tr><th>순위</th><th>사업군</th><th>사업아이템</th><th>공통 5영역 / 100점</th>${respondentType()==='internal'?'<th>전략적 가치 / 100점 (별도)</th>':''}</tr></thead><tbody>${selectedRanks().map(i=>`<tr><td>${i+1}순위</td><td>${escapeHTML(sectionOf(picks[i]))}</td><td><strong>${escapeHTML(nameOf(picks[i]))}</strong></td><td><strong>${scoreOf(i).toFixed(2)}</strong></td>${respondentType()==='internal'?`<td>${strategicScoreOf(i).toFixed(2)}</td>`:''}</tr>`).join('')}</tbody></table><h3>영역별 세부 점수</h3><div class="matrixwrap"><table class="results score-detail"><colgroup>${Array.from({length:6},()=>'<col style="width:16.6667%">').join('')}</colgroup><thead><tr><th>순위</th>${sections.map(v=>`<th>${escapeHTML(v)}</th>`).join('')}</tr></thead><tbody>${selectedRanks().map(i=>{const ss=sectionScores(i);return `<tr><td>${i+1}순위</td>${sections.map(v=>`<td>${(ss[v]||0).toFixed(2)}</td>`).join('')}</tr>`}).join('')}</tbody></table></div>`;
+ $('submitStatus').textContent='';$('submitRemote').disabled=!endpoint;
+}
+// 항목별 자유 의견은 순위 + 사업아이템 ID 기준으로 보관해 선택 변경에도 구분됩니다.
+const itemCommentDrafts = {};
+function commentKey(id){return String(id)}
+function rememberItemComments(){
+ for(let i=0;i<3;i++){
+  const field=$('industryComment'+i);
+  if(field && field.dataset.itemId!==undefined)itemCommentDrafts[commentKey(field.dataset.itemId)]=field.value;
+ }
+}
+function renderIndustryComments(){
+ const container=$('industryComments');
+ rememberItemComments();
+ container.innerHTML=picks.map((id,i)=>{
+  if(id===null||i>=3)return '';
+  const value=itemCommentDrafts[commentKey(id)]||'';
+  return `<div class="comment-row"><label for="industryComment${i}"><strong>${i+1}순위</strong> · ${escapeHTML(sectionOf(id))} <span class="comment-separator">/</span> <strong>${escapeHTML(nameOf(id))}</strong> </label><textarea id="industryComment${i}" data-item-id="${id}" rows="3" placeholder="선택한 사업아이템에 대한 의견을 자유롭게 작성해 주십시오.">${escapeHTML(value)}</textarea></div>`;
+ }).join('');
+}
+function getItemComments(){
+ rememberItemComments();
+ return selectedRanks().map(i=>{const id=picks[i];return {rank:i+1,item_id:itemOrder.indexOf(id)+1,group:sectionOf(id),item:nameOf(id),comment:(itemCommentDrafts[commentKey(id)]||'').trim()}});
+}
+function combinedNotes(itemComments,finalNotes){
+ const lines=[];
+ if(finalNotes)lines.push('[최종 자유 의견]\n'+finalNotes);
+ for(const v of itemComments){if(v.comment)lines.push('['+v.rank+'순위 / '+v.group+' / '+v.item+']\n'+v.comment)}
+ return lines.join('\n\n');
+}
+function payload(){
+ const itemComments=getItemComments();
+ const finalNotes=$('notes').value.trim();
+ return {
+  schema_version:3,
+  // 구 배포 Apps Script의 산업군별 전용 AI:AM에는 잘못 라벨링된 의견을 보내지 않습니다.
+  industry_comments:['','','','',''],
+  selection_comments:itemComments,
+  // 1~3순위 선정 결과를 모두 전송합니다.
+  priority_selections:picks.map((id,i)=>({rank:i+1,item_id:itemOrder.indexOf(id)+1,group:sectionOf(id),item:nameOf(id)})),
+  respondent_type:respondentType(),
+  final_notes:finalNotes,
+  // 기존 Apps Script 수정 없이 AH 추가의견 열에도 전체 내용을 누락 없이 보관합니다.
+  notes:combinedNotes(itemComments,finalNotes),
+  submission_id:submissionId,submitted_at:new Date().toISOString(),
+  organization:$('org').value.trim(),department:$('department').value.trim(),name:$('person').value.trim(),email:$('email').value.trim(),
+  selections:selectedRanks().map((i,j)=>{const id=picks[i];return {rank:i+1,item_id:itemOrder.indexOf(id)+1,group:sectionOf(id),item:nameOf(id),descriptions:descriptions[id],scores:Object.fromEntries(applicableQuestions().map(q=>[q.code,answers[i][q.code]])),category_scores:sectionScores(i),weighted_total:Number(scoreOf(i).toFixed(4)),strategic_score:strategicScoreOf(i),comment:itemComments[j]?.comment||''}})
+ };
+}
+function csvEscape(x){return '"'+String(x??'').replaceAll('"','""')+'"'}
+function download(filename,contents,mime){const blob=new Blob([contents],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500)}
+function makeCSV(){const h=['제출일시','소속','성명','순위','산업군','사업아이템ID','사업아이템','가중치총점',...questions.map(q=>q.code),...['시장 매력도','고객 수요·가치','경쟁우위 확보 가능성','진입·사업화 실현성','투자경제성','전략적 가치·확장성'],'추가의견',...groups.map(g=>'산업군 의견 - '+g[0]),'해당 사업아이템 자유의견','최종 자유의견','평가자 구분','전략적 가치 별도점수/100',...Array.from({length:5},(_,i)=>`${i+1}순위 선정 아이템`)];const p=payload();return '\ufeff'+[h,...p.selections.map(x=>[p.submitted_at,p.organization,p.name,x.rank,x.group,x.item_id,x.item,x.weighted_total,...questions.map(q=>x.scores[q.code]??''),...[...new Set(questions.map(q=>q.section))].map(k=>x.category_scores[k]??''),p.notes,...groups.map((g,i)=>p.industry_comments[i]||''),x.comment,p.final_notes,p.respondent_type,x.strategic_score,...p.priority_selections.map(v=>v.item)])].map(row=>row.map(csvEscape).join(',')).join('\r\n')}
+let submitModalBusy=false;
+function showSubmitModal(state,title,body,id=''){
+ const wrap=$('submitOverlay'),dlg=$('submitDialog'),symbol=$('submitSymbol');
+ submitModalBusy=state==='loading';
+ wrap.classList.remove('hidden');wrap.setAttribute('aria-hidden','false');
+ symbol.className='submit-symbol '+(state==='loading'?'spinner':state==='success'?'success':'error');
+ symbol.textContent=state==='loading'?'':state==='success'?'✓':'!';
+ $('submitDialogTitle').textContent=title;$('submitDialogText').textContent=body;
+ const code=$('submitDialogReceipt');code.textContent=id?'접수번호: '+id:'';code.classList.toggle('hidden',!id);
+ $('submitDialogActions').classList.toggle('hidden',state==='loading');
+ document.body.style.overflow='hidden';dlg.focus();
+}
+function closeSubmitModal(){
+ if(submitModalBusy)return;
+ $('submitOverlay').classList.add('hidden');$('submitOverlay').setAttribute('aria-hidden','true');
+ document.body.style.overflow='';$('submitRemote').focus();
+}
+$('submitDialogClose').onclick=closeSubmitModal;
+document.addEventListener('keydown',e=>{
+ if($('submitOverlay').classList.contains('hidden'))return;
+ if(e.key==='Escape'){e.preventDefault();if(!submitModalBusy)closeSubmitModal()}
+ if(e.key==='Tab'){
+  e.preventDefault();
+  if(submitModalBusy)$('submitDialog').focus();else $('submitDialogClose').focus();
+ }
+});
+let submissionConfirmed=false;
+function receiptNotice(kind,title,description,id=''){
+ const el=$('submissionReceipt');el.className='receipt-box '+kind;
+ el.innerHTML='<strong>'+escapeHTML(title)+'</strong><p>'+escapeHTML(description)+'</p>'+(id?'<p>접수번호: <code>'+escapeHTML(id)+'</code></p>':'');
+ $('submitStatus').textContent='';
+}
+function confirmedReceipt(id,count){
+ submissionConfirmed=true;receiptNotice('success','✓ 평가 제출이 완료되었습니다.',`${count}개 사업아이템의 평가 결과 및 3개 순위 선정 정보가 Google Sheets에 저장된 것을 확인했습니다.`,id);
+ $('submitRemote').disabled=true;$('submitRemote').textContent='제출 완료';
+ showSubmitModal('success','평가 제출이 완료되었습니다',`${count}개 사업아이템의 평가 결과와 3개 우선순위가 정상 저장되었습니다.`,id);
+}
+function verifyReceipt(id,expected){
+ // cross-origin JSONP read-back: Apps Script가 실제 원본 시트에서 접수번호와 행 수를 확인함
+ return new Promise((resolve,reject)=>{
+  const callback='dwReceipt_'+Math.random().toString(36).slice(2);
+  const script=document.createElement('script');
+  let finished=false;
+  const cleanup=()=>{if(finished)return;finished=true;clearTimeout(timer);delete window[callback];script.remove()};
+  const timer=setTimeout(()=>{cleanup();reject(Error('저장 확인 응답이 지연되고 있습니다.'))},9000);
+  window[callback]=data=>{cleanup();if(data&&data.ok&&data.saved_rows===expected&&data.priority_rows===3)resolve(data);else if(data&&data.ok)reject(Error(`확인된 저장 행 수 ${data.saved_rows}개 / 예상 ${expected}개`));else reject(Error(data?.error||'저장 확인 실패'))};
+  script.onerror=()=>{cleanup();reject(Error('서버 확인 주소에 연결할 수 없습니다.'))};
+  script.src=endpoint+(endpoint.includes('?')?'&':'?')+'action=receipt&id='+encodeURIComponent(id)+'&callback='+encodeURIComponent(callback)+'&_='+Date.now();
+  document.head.appendChild(script);
+ });
+}
+$('submitRemote').onclick=async()=>{
+ const btn=$('submitRemote');
+ if(submissionConfirmed)return;
+ if(!allComplete()){$('submitStatus').textContent='1~3순위의 모든 평가문항에 응답해 주세요.';return}
+ if(!hasRequiredPicks()){$('submitStatus').textContent='사업아이템 1~3순위를 모두 선정해 주세요.';return}
+ if(!$('org').value.trim()||!$('department').value.trim()||!$('person').value.trim()||!respondentType()){$('submitStatus').textContent='기본정보를 모두 입력해 주세요.';return}
+ const data=payload(),expected=data.selections.length;
+ if(!endpoint){receiptNotice('unknown','수집 주소가 없습니다.','관리자에게 수집 주소 설정을 요청해 주세요.');return}
+ btn.disabled=true;
+ receiptNotice('','제출 중','선정 순위 3개와 평가 결과를 서버에 저장하고 실제 저장 여부를 확인하고 있습니다.');
+ showSubmitModal('loading','평가 결과를 제출하고 있습니다','응답을 전송하고 저장 여부를 확인하고 있습니다. 잠시만 기다려 주세요.');
+ // 기존 전용 Apps Script 수집 URL에 직접 POST (독립 호스팅용).
+ // 이전과 동일한 form POST를 보이지 않는 iframe으로 전송. 성공 판정은 별도 receipt 조회 결과만 사용.
+ const frame=document.createElement('iframe');frame.name='dw_submission_'+Date.now();frame.style.display='none';document.body.appendChild(frame);
+ const form=document.createElement('form');form.method='POST';form.action=endpoint;form.target=frame.name;form.style.display='none';
+ const input=document.createElement('input');input.type='hidden';input.name='payload';input.value=JSON.stringify(data);form.appendChild(input);document.body.appendChild(form);
+ try{form.submit()}catch(e){receiptNotice('unknown','전송되지 않았습니다.',e.message);btn.disabled=false;showSubmitModal('error','전송에 실패했습니다',e.message);form.remove();frame.remove();return}
+ form.remove();
+ let confirmed=false;let lastVerifyError="";
+ for(let attempt=0;attempt<6;attempt++){
+  await new Promise(res=>setTimeout(res,1300+attempt*600));
+  try{const result=await verifyReceipt(data.submission_id,expected);confirmedReceipt(data.submission_id,result.saved_rows);confirmed=true;break}catch(e){lastVerifyError=e.message||String(e)}
+ }
+ frame.remove();
+ if(!confirmed){receiptNotice('unknown','제출 확인이 완료되지 않았습니다.','서버 저장을 확인할 수 없습니다. 중복 제출 전에 관리자에게 접수번호를 전달해 주세요.'+(lastVerifyError?' 확인 내용: '+lastVerifyError:''),data.submission_id);btn.disabled=false;showSubmitModal('error','저장 여부를 확인하지 못했습니다','저장됐을 가능성이 있습니다. 중복 제출 전 접수번호를 관리자에게 전달해 주세요.'+(lastVerifyError?' ('+lastVerifyError+')':''),data.submission_id)}
+};
+
+renderGrid();applyTexts();document.querySelector('#resultPanel > p.muted').textContent='진행한 평가결과를 확인하세요.';show('identity');
+</script></body></html>
